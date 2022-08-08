@@ -1,12 +1,12 @@
 import fs from 'fs'
 import inquirer from 'inquirer'
+import { generateWebpage } from './src/js/generate-webpage.js'
 import questions from './src/js/questions.js'
 
 let managerAnswers, employeeAnswers = []
 
 const managerPrompt = () => {
 	inquirer.prompt(questions.manager).then((answers) => {
-		console.log(answers)
 		managerAnswers = answers
 		addEmployee()
 	})
@@ -26,6 +26,7 @@ const addEmployee = () => {
 
 const newEngineer = () => {
 	inquirer.prompt(questions.engineer).then((answers) => {
+		answers.role = 'Engineer'
 		employeeAnswers.push(answers)
 		addEmployee()
 	})
@@ -33,6 +34,7 @@ const newEngineer = () => {
 
 const newIntern = () => {
 	inquirer.prompt(questions.intern).then((answers) => {
+		answers.role = 'Intern'
 		employeeAnswers.push(answers)
 		addEmployee()
 	})
@@ -43,7 +45,9 @@ const buildTeam = () => {
 	const dir = './dist'
 	if (!fs.existsSync(dir)) { fs.mkdirSync(dir) }
 
-	fs.writeFile(dir + '/index.html', generateWebpage(managerAnswers, employeeAnswers), err => {
+	const newPage = generateWebpage(managerAnswers, employeeAnswers)
+
+	fs.writeFile(dir + '/index.html', JSON.parse(newPage), err => {
 		if (err) { throw new Error(err) }
 		console.log('Webpage created! Check the dist folder.')
 	})
