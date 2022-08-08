@@ -1,8 +1,30 @@
 import fs from 'fs'
 import inquirer from 'inquirer'
-import questions from './src/js/questions'
+import questions from './src/js/questions.js'
 
-inquirer.prompt(questions)
+let managerAnswers, employeeAnswers = []
+
+const managerPrompt = () => {
+	inquirer.prompt(questions.manager).then((answers) => {
+		console.log(answers)
+		managerAnswers = answers
+		addEmployee()
+	})
+}
+
+const addEmployee = () => {
+	inquirer.prompt(questions.newEmployee).then((answers) => {
+		if (answers.newEmployee) {
+			// TODO: add function to prompt new employee questions
+		}
+	})
+}
+
+managerPrompt()
+
+// TODO: convert to new function to be executed when no more employees will be added
+/*
+inquirer.prompt(questions.manager)
 .then((answers) => {
 	const dir = './dist'
 	if (!fs.existsSync(dir)) { fs.mkdirSync(dir) }
@@ -11,3 +33,4 @@ inquirer.prompt(questions)
 		console.log('Webpage created! Check the dist folder.')
 	})
 })
+*/
