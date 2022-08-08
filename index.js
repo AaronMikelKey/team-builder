@@ -19,7 +19,7 @@ const addEmployee = () => {
 		} else if (answers.newEmployee === 'Add Intern') {
 			newIntern()
 		} else {
-			// TODO: add function to build team and exit application
+			buildTeam()
 		}
 	})
 }
@@ -38,17 +38,15 @@ const newIntern = () => {
 	})
 }
 
-managerPrompt()
-
-// TODO: convert to new function to be executed when no more employees will be added
-/*
-inquirer.prompt(questions.manager)
-.then((answers) => {
+const buildTeam = () => {
+	// create /dist directory if one doesn't exist
 	const dir = './dist'
 	if (!fs.existsSync(dir)) { fs.mkdirSync(dir) }
-	fs.writeFile(dir + '/index.html', generateWebpage(answers), err => {
+
+	fs.writeFile(dir + '/index.html', generateWebpage(managerAnswers, employeeAnswers), err => {
 		if (err) { throw new Error(err) }
 		console.log('Webpage created! Check the dist folder.')
 	})
-})
-*/
+}
+
+managerPrompt()
