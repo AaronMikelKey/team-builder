@@ -1,18 +1,26 @@
-const employeeCard = (name, id, email, github, officeNumber, school) => {
-	let role
-	if (officeNumber) { 
-		role = 'Manager' 
-	} else if ( school ) {
-		role = 'Intern'
+export const employeeCard = (data, divId, role) => {
+	
+	const {id, name, email, officeNumber, github, school, employeeRole} = data
+	
+	let bottomDiv
+
+	role ? role = role : role = employeeRole
+
+	if (officeNumber) {
+		bottomDiv = `<div> Office Number: ${officeNumber} </div>` 
+	} else if (github) {
+		bottomDiv = `<div> Github: <a href='https://github.com/${github}' >${github}</a> </div>` 
 	} else {
-		role = 'Engineer'
+		bottomDiv = `<div> School: ${school} </div>` 
 	}
 
-	return `<div id=${id}>
-		<div> 
-			<h2> ${name} </h2>
-			<h3> ${role} </h3>
-		</div>
-
-	</div>`
+	return `<div id=${divId}>
+	<div>
+		<h2>${name}</h2>
+		<h3>${role}</h3>
+		<div>ID: ${id}</div>
+		<div>Email: ${email}</div>
+		${bottomDiv}
+	</div>
+</div>`
 }
