@@ -17,7 +17,7 @@ const addEmployee = () => {
 		if (answers.newEmployee === 'Add Engineer') {
 			newEngineer()
 		} else if (answers.newEmployee === 'Add Intern') {
-			// TODO: add function to prompt new employee questions
+			newIntern()
 		} else {
 			// TODO: add function to build team and exit application
 		}
@@ -26,6 +26,13 @@ const addEmployee = () => {
 
 const newEngineer = () => {
 	inquirer.prompt(questions.engineer).then((answers) => {
+		employeeAnswers.push(answers)
+		addEmployee()
+	})
+}
+
+const newIntern = () => {
+	inquirer.prompt(questions.intern).then((answers) => {
 		employeeAnswers.push(answers)
 		addEmployee()
 	})
