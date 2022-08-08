@@ -15,12 +15,19 @@ const managerPrompt = () => {
 const addEmployee = () => {
 	inquirer.prompt(questions.newEmployee).then((answers) => {
 		if (answers.newEmployee === 'Add Engineer') {
-			// TODO: add function to prompt new employee questions
+			newEngineer()
 		} else if (answers.newEmployee === 'Add Intern') {
 			// TODO: add function to prompt new employee questions
 		} else {
 			// TODO: add function to build team and exit application
 		}
+	})
+}
+
+const newEngineer = () => {
+	inquirer.prompt(questions.engineer).then((answers) => {
+		employeeAnswers.push(answers)
+		addEmployee()
 	})
 }
 
