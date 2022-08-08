@@ -32,6 +32,29 @@ newEmployee: [
 	}
 ],
 
+engineer: [
+	{
+		type: 'input',
+		name: 'name',
+		message: `What is your engineer's name?`
+	},
+	{
+		type: 'input',
+		name: 'id',
+		message: `What is your engineer's employee ID?`
+	},
+	{
+		type: 'input',
+		name: 'email',
+		message: `What is your engineer's email address?`
+	},
+	{
+		type: 'input',
+		name: 'github',
+		message: `What is your engineer's github username?`
+	},
+	
+],
 }
 
 export default questions
