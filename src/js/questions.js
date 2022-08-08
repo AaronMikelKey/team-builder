@@ -29,6 +29,15 @@ newEmployee: [
 		name: 'newEmployee',
 		message: 'Would you like to add a team member?'
 	}
+],
+
+employeeRole: [
+	{
+		type: 'list',
+		name: 'employeeRole',
+		message: 'Which type of employee would you like to add?',
+		choices: ['Engineer', 'Intern']
+	}
 ]
 }
 
