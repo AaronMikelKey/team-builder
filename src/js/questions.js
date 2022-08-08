@@ -2,22 +2,22 @@ const questions = {
 	manager: [
 	{
 		type: 'input',
-		name: 'managerName',
+		name: 'name',
 		message: `What is your team Manager's name?`
 	},
 	{
 		type: 'input',
-		name: 'managerId',
+		name: 'id',
 		message: `What is your team Manager's employee ID?`
 	},
 	{
 		type: 'input',
-		name: 'managerEmail',
+		name: 'email',
 		message: `What is your team Manager's email address?`
 	},
 	{
 		type: 'input',
-		name: 'managerOffice',
+		name: 'officeNumber',
 		message: `What is your team Manager's office number?`
 	},
 	
@@ -74,7 +74,7 @@ intern: [
 	},
 	{
 		type: 'input',
-		name: 'github',
+		name: 'school',
 		message: `What school does your intern attend?`
 	},
 	
