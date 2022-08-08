@@ -1,4 +1,5 @@
-export const questions = [
+const questions = {
+	manager: [
 	{
 		type: 'input',
 		name: 'managerName',
@@ -20,4 +21,15 @@ export const questions = [
 		message: `What is your team Manager's office number?`
 	},
 	
+],
+
+newEmployee: [
+	{
+		type: 'confirm',
+		name: 'newEmployee',
+		message: 'Would you like to add a team member?'
+	}
 ]
+}
+
+export default questions
