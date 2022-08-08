@@ -25,20 +25,13 @@ const questions = {
 
 newEmployee: [
 	{
-		type: 'confirm',
+		type: 'list',
 		name: 'newEmployee',
-		message: 'Would you like to add a team member?'
+		message: 'Would you like to add a team member?',
+		choices: ['Add Engineer', 'Add Intern', 'Finish building team']
 	}
 ],
 
-employeeRole: [
-	{
-		type: 'list',
-		name: 'employeeRole',
-		message: 'Which type of employee would you like to add?',
-		choices: ['Engineer', 'Intern']
-	}
-]
 }
 
 export default questions
