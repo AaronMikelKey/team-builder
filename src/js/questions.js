@@ -55,6 +55,30 @@ engineer: [
 	},
 	
 ],
+
+intern: [
+	{
+		type: 'input',
+		name: 'name',
+		message: `What is your intern's name?`
+	},
+	{
+		type: 'input',
+		name: 'id',
+		message: `What is your intern's employee ID?`
+	},
+	{
+		type: 'input',
+		name: 'email',
+		message: `What is your intern's email address?`
+	},
+	{
+		type: 'input',
+		name: 'github',
+		message: `What school does your intern attend?`
+	},
+	
+],
 }
 
 export default questions
