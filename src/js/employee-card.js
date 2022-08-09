@@ -19,7 +19,7 @@ export const employeeCard = (data, divId, role) => {
 		<h2>${name}</h2>
 		<h3>${role}</h3>
 		<div>ID: ${id}</div>
-		<div>Email: ${email}</div>
+		<div>Email: <a href=mailto:${email}>${email}</a></div>
 		${bottomDiv}
 	</div>
 </div>`
