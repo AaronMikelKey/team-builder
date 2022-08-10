@@ -6,6 +6,7 @@ import Intern from './lib/intern.js'
 import { generateWebpage } from './src/js/generate-webpage.js'
 import questions from './src/js/questions.js'
 
+
 let managerAnswers, employeeAnswers = []
 
 const managerPrompt = () => {
@@ -14,7 +15,7 @@ const managerPrompt = () => {
 		console.log(e)
 		managerAnswers = e
 		addEmployee()
-	})
+	}).catch((err) => {throw new Error(err)})
 }
 
 const addEmployee = () => {
@@ -26,7 +27,7 @@ const addEmployee = () => {
 		} else {
 			buildTeam()
 		}
-	})
+	}).catch((err) => {throw new Error(err)})
 }
 
 const newEngineer = () => {
@@ -35,7 +36,7 @@ const newEngineer = () => {
 		console.log(e)
 		employeeAnswers.push(e)
 		addEmployee()
-	})
+	}).catch((err) => {throw new Error(err)})
 }
 
 const newIntern = () => {
@@ -43,7 +44,7 @@ const newIntern = () => {
 		let e = new Intern(answers.name, answers.id, answers.email, answers.school)
 		employeeAnswers.push(e)
 		addEmployee()
-	})
+	}).catch((err) => {throw new Error(err)})
 }
 
 const buildTeam = () => {
@@ -52,7 +53,15 @@ const buildTeam = () => {
 	if (!fs.existsSync(dir)) { fs.mkdirSync(dir) }
 
 	const newPage = generateWebpage(managerAnswers, employeeAnswers)
-
+	let cssFile 
+	
+	fs.readFile('./src/css/styles.css', "utf8", (err, data) => {
+		if(err) { throw new Error(err) }
+		cssFile = data
+	})
+	fs.writeFile(dir + '/styles.css', cssFile, err => {
+		if (err) { throw new Error(err) }
+	})
 	fs.writeFile(dir + '/index.html', JSON.parse(newPage), err => {
 		if (err) { throw new Error(err) }
 		console.log('Webpage created! Check the dist folder.')
