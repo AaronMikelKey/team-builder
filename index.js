@@ -30,10 +30,9 @@ const addEmployee = () => {
 
 const newEngineer = () => {
 	inquirer.prompt(questions.engineer).then((answers) => {
-		answers.role = 'Engineer'
-		let e = new Engineer(answers)
+		let e = new Engineer(answers.name, answers.id, answers.email, answers.github)
 		console.log(e)
-		employeeAnswers.push(answers)
+		employeeAnswers.push(e)
 		addEmployee()
 	})
 }
