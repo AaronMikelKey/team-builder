@@ -20,6 +20,7 @@ export const generateWebpage = (manager, employees) => {
 		<link rel="stylesheet" type="text/css" href="./styles.css">
 	</head>
 	<body>
+	<header> My Team </header>
 		${managerCard + employeeCards.toString().replace(',', '')}
 	</body>
 	</html>`)

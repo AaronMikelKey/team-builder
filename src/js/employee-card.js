@@ -7,20 +7,18 @@ export const employeeCard = (data, divId, role) => {
 	role ? role = role : role = employeeRole
 
 	if (officeNumber) {
-		bottomDiv = `<div> Office Number: ${officeNumber} </div>` 
+		bottomDiv = `<div class='bottomDiv'> Office Number: ${officeNumber} </div>` 
 	} else if (github) {
-		bottomDiv = `<div> Github: <a href='https://github.com/${github}' >${github}</a> </div>` 
+		bottomDiv = `<div class='bottomDiv'> Github: <a href='https://github.com/${github}' >${github}</a> </div>` 
 	} else {
-		bottomDiv = `<div> School: ${school} </div>` 
+		bottomDiv = `<div class='bottomDiv'> School: ${school} </div>` 
 	}
 
-	return `<div id=${divId}>
-	<div>
-		<h2>${name}</h2>
-		<h3>${role}</h3>
-		<div>ID: ${id}</div>
-		<div>Email: <a href=mailto:${email}>${email}</a></div>
+	return `<div id=${divId} class='card'>
+		<div class='name'>${name}</div>
+		<div class='role'>${role}</div>
+		<div class='employeeId'>ID: ${id}</div>
+		<div class='email'>Email: <a href=mailto:${email}>${email}</a></div>
 		${bottomDiv}
-	</div>
 </div>`
 }
