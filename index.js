@@ -2,6 +2,7 @@ import fs from 'fs'
 import inquirer from 'inquirer'
 import Engineer from './lib/Engineer.js'
 import Manager from './lib/manager.js'
+import Intern from './lib/intern.js'
 import { generateWebpage } from './src/js/generate-webpage.js'
 import questions from './src/js/questions.js'
 
@@ -39,8 +40,8 @@ const newEngineer = () => {
 
 const newIntern = () => {
 	inquirer.prompt(questions.intern).then((answers) => {
-		answers.role = 'Intern'
-		employeeAnswers.push(answers)
+		let e = new Intern(answers.name, answers.id, answers.email, answers.school)
+		employeeAnswers.push(e)
 		addEmployee()
 	})
 }
