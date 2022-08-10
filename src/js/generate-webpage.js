@@ -3,13 +3,14 @@ import { employeeCard } from "./employee-card.js"
 export const generateWebpage = (manager, employees) => {
 	let count = 1
 	const managerCard = employeeCard(manager, 0, 'Manager')
-	const employeeCards = []
+	let employeeCards = []
 	if (employees) {
 		employees.forEach(employee => {
 			employeeCards.push(employeeCard(employee, count, employee.role))
 			count += 1
 		});
 	}
+	employeeCards = employeeCards.toString().replace(/\,/g, '')
 	return JSON.stringify(`<!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -21,7 +22,9 @@ export const generateWebpage = (manager, employees) => {
 	</head>
 	<body>
 	<header> My Team </header>
-		${managerCard + employeeCards.toString().replace(',', '')}
+	<div id='card-holder'>
+		${managerCard + employeeCards}
+	</div>
 	</body>
 	</html>`)
 }
