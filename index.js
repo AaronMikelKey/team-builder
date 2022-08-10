@@ -15,7 +15,7 @@ const managerPrompt = () => {
 		console.log(e)
 		managerAnswers = e
 		addEmployee()
-	}).catch((err) => {throw new Error(err)})
+	}).catch((err) => {console.log(err)})
 }
 
 const addEmployee = () => {
@@ -27,7 +27,7 @@ const addEmployee = () => {
 		} else {
 			buildTeam()
 		}
-	}).catch((err) => {throw new Error(err)})
+	}).catch((err) => {console.log(err)})
 }
 
 const newEngineer = () => {
@@ -36,7 +36,7 @@ const newEngineer = () => {
 		console.log(e)
 		employeeAnswers.push(e)
 		addEmployee()
-	}).catch((err) => {throw new Error(err)})
+	}).catch((err) => {console.log(err)})
 }
 
 const newIntern = () => {
@@ -44,7 +44,7 @@ const newIntern = () => {
 		let e = new Intern(answers.name, answers.id, answers.email, answers.school)
 		employeeAnswers.push(e)
 		addEmployee()
-	}).catch((err) => {throw new Error(err)})
+	}).catch((err) => {console.log(err)})
 }
 
 const buildTeam = () => {
@@ -55,12 +55,8 @@ const buildTeam = () => {
 	const newPage = generateWebpage(managerAnswers, employeeAnswers)
 	let cssFile 
 	
-	fs.readFile('./src/css/styles.css', "utf8", (err, data) => {
+	fs.copyFile('./src/css/styles.css', dir + '/styles.css', (err) => {
 		if(err) { throw new Error(err) }
-		cssFile = data
-	})
-	fs.writeFile(dir + '/styles.css', cssFile, err => {
-		if (err) { throw new Error(err) }
 	})
 	fs.writeFile(dir + '/index.html', JSON.parse(newPage), err => {
 		if (err) { throw new Error(err) }
