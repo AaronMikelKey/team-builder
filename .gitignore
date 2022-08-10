@@ -3,6 +3,3 @@ node_modules/
 
 #misc
 .DS_Store
-
-# Remove before turning in
-/dist

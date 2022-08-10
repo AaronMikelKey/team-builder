@@ -1,0 +1,57 @@
+html, body {
+	margin: 0;
+	background-color: #E88D67;
+}
+
+header {
+	font-size: 3em;
+	text-align: center;
+	padding: 5rem;
+	background-color: #0356C9;
+	color: #FFFFFF;
+	margin-bottom: 1em;
+	border-bottom-right-radius: 1em;
+	border-bottom-left-radius: 1em;
+}
+
+#card-holder {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.card {
+	padding: 0.5rem;
+	border: 2px solid black;
+	height: auto;
+	width: 15rem;
+	background-color: #3BF4FB;
+	border-radius: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.name {
+	font-size: 2.2em;
+}
+
+.role {
+	font-size: 1.4em;
+	padding-bottom: 0.3rem;
+	margin-bottom: 1rem;
+	border-bottom: 0.2rem solid black;
+}
+
+.employeeId {
+	text-align: center;
+	margin-top: 0.4rem;
+}
+
+.email  {
+	text-align: center;
+	margin-top: 0.4rem;
+}
+
+.bottomDiv {
+	text-align: center;
+	margin-top: 0.4rem;
+}
