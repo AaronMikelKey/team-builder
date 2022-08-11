@@ -12,7 +12,6 @@ let managerAnswers, employeeAnswers = []
 const managerPrompt = () => {
 	inquirer.prompt(questions.manager).then((answers) => {
 		let e = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
-		console.log(e)
 		managerAnswers = e
 		addEmployee()
 	}).catch((err) => {console.log(err)})
@@ -33,7 +32,6 @@ const addEmployee = () => {
 const newEngineer = () => {
 	inquirer.prompt(questions.engineer).then((answers) => {
 		let e = new Engineer(answers.name, answers.id, answers.email, answers.github)
-		console.log(e)
 		employeeAnswers.push(e)
 		addEmployee()
 	}).catch((err) => {console.log(err)})
@@ -53,7 +51,6 @@ const buildTeam = () => {
 	if (!fs.existsSync(dir)) { fs.mkdirSync(dir) }
 
 	const newPage = generateWebpage(managerAnswers, employeeAnswers)
-	let cssFile 
 	
 	fs.copyFile('./src/css/styles.css', dir + '/styles.css', (err) => {
 		if(err) { throw new Error(err) }
