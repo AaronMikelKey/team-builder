@@ -5,6 +5,10 @@
 
 This is a CLI app that will allow you to build a team consisting of a manager, and as many engineers and/or interns as you would like.  You can then input their information, and the app will create a static HTML page that displays the team.
 
+Click below to see a video walkthrough.
+
+[![Link to video walkthrough](./src/images/example-image.png)](https://drive.google.com/file/d/1xrNr4l-2VqM83zrEKkwLm8QZu17qQPlS/view?usp=sharing)
+
 ---
 
 ## Table of Contents
@@ -14,8 +18,6 @@ This is a CLI app that will allow you to build a team consisting of a manager, a
 [Usage](#Usage)
 
 [License](#License)
-
-[Contributing](#Contributing)
 
 [Tests](#Tests)
 
@@ -41,7 +43,10 @@ To use this app, run 'node index.js' or 'npm start'
 
 ---
 ## Tests
-TBD
+
+This project uses jest for testing.  Be sure to use the npm command as it uses node experimental modules. 
+
+To test, run npm test.
 
 ---
 
