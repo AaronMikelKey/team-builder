@@ -9,7 +9,7 @@ export const employeeCard = (data, divId, role) => {
 	if (officeNumber) {
 		bottomDiv = `<div class='bottomDiv'> Office Number: ${officeNumber} </div>` 
 	} else if (github) {
-		bottomDiv = `<div class='bottomDiv'> Github: <a href='https://github.com/${github}' >${github}</a> </div>` 
+		bottomDiv = `<div class='bottomDiv'> Github: <a href='https://github.com/${github}' target='_blank' >${github}</a> </div>` 
 	} else {
 		bottomDiv = `<div class='bottomDiv'> School: ${school} </div>` 
 	}
