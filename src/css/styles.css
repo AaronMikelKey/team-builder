@@ -1,17 +1,18 @@
 html, body {
 	margin: 0;
-	background-color: #E88D67;
+	background-color: #e5e7eb;
+	font-family: Roboto, sans-serif;
 }
 
 header {
 	font-size: 3em;
 	text-align: center;
-	padding: 5rem;
-	background-color: #0356C9;
+	padding: 4.5rem;
+	margin: 0.5rem;
+	background-color: #c00;
 	color: #FFFFFF;
 	margin-bottom: 1em;
-	border-bottom-right-radius: 1em;
-	border-bottom-left-radius: 1em;
+	border-radius: 0.2em;
 }
 
 #card-holder {
@@ -21,36 +22,76 @@ header {
 }
 
 .card {
-	padding: 0.5rem;
 	border: 2px solid black;
-	height: auto;
+	min-height: 250px;
 	width: 15rem;
-	background-color: #3BF4FB;
 	border-radius: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: 0.5em;
+	box-shadow: 5px 5px 10px #808080;
 }
 
 .name {
-	font-size: 2.2em;
+	font-size: 1.8em;
+	background-color: #000000;
+	padding: 0.1em;
+	border-top-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+	color: #FFFFFF;
+	min-height: 66px;
 }
 
 .role {
 	font-size: 1.4em;
-	padding-bottom: 0.3rem;
 	margin-bottom: 1rem;
-	border-bottom: 0.2rem solid black;
+	background-color: #000000;
+	padding: 0.1em;
+	padding-bottom: 0.5rem;
+	color: #FFFFFF;
 }
 
 .employeeId {
 	text-align: center;
-	margin-top: 0.4rem;
+	margin-top: 0.6rem;
+	border: 1px solid black;
+	margin-left: 0.8em;
+	margin-right: 0.8em;
+	padding-top: 0.35em;
+	padding-bottom: 0.35em;
+	box-shadow: 2px 2px 2px #808080;
+	border-radius: 5px;
+	font-size: 0.9em;
 }
 
 .email  {
 	text-align: center;
-	margin-top: 0.4rem;
+	margin-top: 0.6rem;
+	border: 1px solid black;
+	margin-left: 0.8em;
+	margin-right: 0.8em;
+	padding-top: 0.35em;
+	padding-bottom: 0.35em;
+	box-shadow: 2px 2px 2px #808080;
+	border-radius: 5px;
+	font-size: 0.9em;
 }
 
 .bottomDiv {
 	text-align: center;
-	margin-top: 0.4rem;
+	margin-top: 0.6rem;
+	border: 1px solid black;
+	margin-left: 0.8em;
+	margin-right: 0.8em;
+	padding-top: 0.35em;
+	padding-bottom: 0.35em;
+	box-shadow: 2px 2px 2px #808080;
+	border-radius: 5px;
+	font-size: 0.9em;
+}
+
+a:visited {
+	color: blue;
+}
+a:hover {
+	color: #c00;
 }
